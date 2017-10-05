@@ -37,7 +37,12 @@ source: ./source
 # sass_dir: source/css
 
 collections:
-- docs
+  docs:
+    output: true 
+    permalink: general/:title
+  projects:
+    output: true
+    permalink: projects/:title
 
 # page_gen:
 #   - data: 'portfolio'

@@ -25,6 +25,10 @@ gulp.task('image', function () {
     .pipe(gulp.dest('_site/images'));
 });
 
+
+// Deploy Tasks
+gulp.task('build:prod', shell.task(['bundle exec jekyll build']));
+
 gulp.task('push-gh-master', shell.task(['git push origin master']));
 
 gulp.task('push-gh-pages', function () {
@@ -34,6 +38,7 @@ gulp.task('push-gh-pages', function () {
 
 gulp.task('deploy', function (callback) {
   runSequence(
+    'build:prod',
     'image',
     'push-gh-master',
     'push-gh-pages',
@@ -41,8 +46,9 @@ gulp.task('deploy', function (callback) {
   );
 });
 
-gulp.task('jekyll', shell.task(['jekyll build --incremental']));
-gulp.task('jekyll-force', shell.task(['jekyll build']));
+// Dev tasks
+gulp.task('jekyll', shell.task(['bundle exec jekyll build --incremental --config _config.yml,_config_dev.yml']));
+gulp.task('jekyll-force', shell.task(['bundle exec jekyll build --config _config.yml,_config_dev.yml']));
 
 gulp.task('jekyll-rebuild', ['jekyll'], function () {
     browserSync.reload();
