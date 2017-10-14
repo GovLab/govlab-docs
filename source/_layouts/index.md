@@ -1,12 +1,10 @@
 ---
 layout: default
-title: API Documentation
+title: Govlab Documentation
 ---
-{% if page.github %}
-{% assign github = page.github %}
-{% include github-link.html github_url=github%}
-{% endif %}
+
 <main role="main" class="main-wrapper"> <!-- main content starts here -->
+
 <aside class="sidebar">
 <h1 class="main-logo">
   <img src="{{ '/images/govlab-logo-white.png' | absolute_url}}" alt="">
@@ -15,10 +13,11 @@ title: API Documentation
 {% include sidebar.html %}
 </aside>
 
-<section class="main-content long-text docs {% if page.css_class %}{{':.' | append: page.css_class}}{%endif%}">
+<section class="main-content long-text docs">
   <h1 class="page-title">{{page.title}}</h1>
-  {{content}}
+  {% for doc in site.docs %}
+  <h1>{{doc.title}}</h1>
+  {{doc.content}}
+  {% endfor %}
 </section>
-
 </main>
-

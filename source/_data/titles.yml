@@ -7,29 +7,10 @@
             - title: Layouts
             - title: Data
             - title: Posts
-            - title: Layouts
-            - title: Data
-            - title: Posts
-            - title: Layouts
-            - title: Data
-            - title: Posts
-            - title: Layouts
-            - title: Data
-            - title: Posts
-            - title: Layouts
-            - title: Data
-            - title: Posts
-
         - title: Gulp
 
     - title: Styleguide
     - title: Colors
-
-- title: Projects
-  subtitles: 
-    - title: OD500
-    - title: Data Collab
-    - title: NOI
 
 - title: Team
   subtitles: 

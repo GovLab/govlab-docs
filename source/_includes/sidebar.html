@@ -1,3 +1,4 @@
+
 <section class="sidebar-list">
 <ul class="animate">
 {% for i in site.data.titles %}
@@ -25,4 +26,26 @@
     {% endif %}
 {% endfor %}
 </ul>
+<!-- Projects menu -->
+<ul class="animate">
+  <li><a class="js-trigger" href="{{'/#projects' | relative_path}}">Projects</a>
+      <ul class="animate">
+        {% for j in site.projects %}
+        {%assign project_url = j.title | slugify  | append: '.html' %}
+          <li class="animate"><a class="js-trigger" href="{{'/projects/' | append: project_url | relative_path }}">{{j.title}}</a>
+        {% endfor %}
+      </ul>
+  </ul>
+
+  <!-- Tools menu -->
+  <ul class="animate">
+    <li><a class="js-trigger" href="{{'/#tools' | relative_path}}">Tools</a>
+        <ul class="animate">
+          {% for j in site.tools%}
+          {%assign tools_url = j.title | slugify  | append: '.html' %}
+            <li class="animate"><a class="js-trigger" href="{{'/tools/' | append: tools_url | relative_path }}">{{j.title}}</a>
+          {% endfor %}
+        </ul>
+    </ul>
+
 </section>
