@@ -28,22 +28,22 @@
 </ul>
 <!-- Projects menu -->
 <ul class="animate">
-  <li><a class="js-trigger" href="{{'/#projects' | absolute_url}}">Projects</a>
+  <li><a class="js-trigger" href="#projects">Projects</a>
       <ul class="animate">
         {% for j in site.projects %}
         {%assign project_url = j.title | slugify  | append: '.html' %}
-          <li class="animate"><a class="js-trigger" href="{{'/projects/' | append: project_url | relative_path }}">{{j.title}}</a>
+          <li class="animate"><a class="js-trigger" href="{{'/projects/' | append: project_url | relative_url }}">{{j.title}}</a>
         {% endfor %}
       </ul>
   </ul>
 
   <!-- Tools menu -->
   <ul class="animate">
-    <li><a class="js-trigger" href="{{'/#tools' | absolute_url}}">Tools</a>
+    <li><a class="js-trigger" href="#tools">Tools</a>
         <ul class="animate">
           {% for j in site.tools%}
           {%assign tools_url = j.title | slugify  | append: '.html' %}
-            <li class="animate"><a class="js-trigger" href="{{'/tools/' | append: tools_url | relative_path }}">{{j.title}}</a>
+            <li class="animate"><a class="js-trigger" href="{{'/tools/' | append: tools_url | relative_url }}">{{j.title}}</a>
           {% endfor %}
         </ul>
     </ul>
