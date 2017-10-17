@@ -28,7 +28,7 @@
 </ul>
 <!-- Projects menu -->
 <ul class="animate">
-  <li><a class="js-trigger" href="{{'/#projects' | relative_path}}">Projects</a>
+  <li><a class="js-trigger" href="{{'/#projects' | absolute_url}}">Projects</a>
       <ul class="animate">
         {% for j in site.projects %}
         {%assign project_url = j.title | slugify  | append: '.html' %}
@@ -39,7 +39,7 @@
 
   <!-- Tools menu -->
   <ul class="animate">
-    <li><a class="js-trigger" href="{{'/#tools' | relative_path}}">Tools</a>
+    <li><a class="js-trigger" href="{{'/#tools' | absolute_url}}">Tools</a>
         <ul class="animate">
           {% for j in site.tools%}
           {%assign tools_url = j.title | slugify  | append: '.html' %}
