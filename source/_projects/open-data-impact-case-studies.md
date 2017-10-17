@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Opening Governance
+title: Open Data Impact Case Studies
 github: https://github.com/GovLab/odimpact-2
 ---
 
