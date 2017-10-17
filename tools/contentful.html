@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>Contentful</title>
+
+    <link rel="stylesheet" href="/vendor/foundation.min.css">
+    <link rel="stylesheet" href="/vendor/styleguide-v2.css">
+    <link rel="stylesheet" href="/vendor/prism.css">
+    <link rel="stylesheet" href="/vendor/slick.css"/>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://use.typekit.net/mvc3cdb.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body class="">
+
+    
+<main role="main" class="main-wrapper"> <!-- main content starts here -->
+<aside class="sidebar">
+<h1 class="main-logo">
+  <img src="/images/govlab-logo-white.png" alt="">
+  Docs
+</h1>
+
+<section class="sidebar-list">
+<ul class="animate">
+
+  <li><a class="js-trigger" href="#introduction">Introduction</a>
+    
+      <ul class="animate">
+        
+          <li class="animate"><a class="js-trigger" href="#basic-tech-stack">Basic Tech Stack</a>
+          
+            <ul class="animate">
+              
+                <li class="animate"><a class="js-trigger" href="#jekyll">Jekyll</a>
+                
+                  <ul class="animate">
+                  
+                    <li class="animate"><a class="js-trigger" href="#layouts">Layouts</a>
+                  
+                    <li class="animate"><a class="js-trigger" href="#data">Data</a>
+                  
+                    <li class="animate"><a class="js-trigger" href="#posts">Posts</a>
+                  
+                  </ul>
+                
+              
+                <li class="animate"><a class="js-trigger" href="#gulp">Gulp</a>
+                
+              
+            </ul>
+          
+        
+          <li class="animate"><a class="js-trigger" href="#styleguide">Styleguide</a>
+          
+        
+          <li class="animate"><a class="js-trigger" href="#colors">Colors</a>
+          
+        
+      </ul>
+    
+
+  <li><a class="js-trigger" href="#team">Team</a>
+    
+      <ul class="animate">
+        
+          <li class="animate"><a class="js-trigger" href="#anna-bialas">Anna Bialas</a>
+          
+        
+          <li class="animate"><a class="js-trigger" href="#ena-bek">Ena Bek</a>
+          
+        
+          <li class="animate"><a class="js-trigger" href="#denny-tek">Denny Tek</a>
+          
+        
+          <li class="animate"><a class="js-trigger" href="#mark-adkins">Mark Adkins</a>
+          
+        
+          <li class="animate"><a class="js-trigger" href="#david-naffis">David Naffis</a>
+          
+        
+          <li class="animate"><a class="js-trigger" href="#chris-wong">Chris Wong</a>
+          
+        
+          <li class="animate"><a class="js-trigger" href="#claudio-mendonca">Claudio Mendonca</a>
+          
+        
+      </ul>
+    
+
+</ul>
+<!-- Projects menu -->
+<ul class="animate">
+  <li><a class="js-trigger" href="/#projects">Projects</a>
+      <ul class="animate">
+        
+        
+          <li class="animate"><a class="js-trigger" href="/projects/network-of-innovators.html">Network of Innovators</a>
+        
+        
+          <li class="animate"><a class="js-trigger" href="/projects/od500.html">OD500</a>
+        
+        
+          <li class="animate"><a class="js-trigger" href="/projects/open-data-impact-case-studies.html">Open Data Impact Case Studies</a>
+        
+        
+          <li class="animate"><a class="js-trigger" href="/projects/opening-governance.html">Opening Governance</a>
+        
+      </ul>
+  </ul>
+
+  <!-- Tools menu -->
+  <ul class="animate">
+    <li><a class="js-trigger" href="/#tools">Tools</a>
+        <ul class="animate">
+          
+          
+            <li class="animate"><a class="js-trigger" href="/tools/circle-ci.html">Circle CI</a>
+          
+          
+            <li class="animate"><a class="js-trigger" href="/tools/contentful.html">Contentful</a>
+          
+          
+            <li class="animate"><a class="js-trigger" href="/tools/jekyll.html">Jekyll</a>
+          
+        </ul>
+    </ul>
+
+</section>
+
+</aside>
+
+<section class="main-content long-text docs :.tech-docs-page">
+  <h1 class="page-title">Contentful</h1>
+  <h3 id="build">Build</h3>
+
+<p>Pages are built using the Contentful’s <a href="https://github.com/contentful/jekyll-contentful-data-import">jekyll-contentful-data-import</a>)</p>
+
+<h3 id="hiding-contentful-variables-with-jekyll-jekyll-contentful-data-import-contentful-and-circleci">Hiding Contentful Variables with Jekyll, Jekyll Contentful Data Import, Contentful, and CircleCI</h3>
+
+<p><a href="https://github.com/contentful/jekyll-contentful-data-import#hiding-space-and-access-token-in-public-repositories">Contentful documentation</a></p>
+
+<p><a href="https://circleci.com/docs/1.0/environment-variables/#setting-environment-variables-for-all-commands-without-adding-them-to-git">CircleCI documentation</a></p>
+
+<p><strong>1. Generate your API keys in Contentful</strong></p>
+
+<p>API —&gt; Add API Key</p>
+
+<p>Space ID and Content Delivery API - access token are the relevant fields.</p>
+
+<p><strong>2. Add variables to your shell’s configuration file</strong></p>
+
+<p>Run <code class="highlighter-rouge">bundle update</code> first since this is a fairly recent feature</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  export CONTENTFUL_ACCESS_TOKEN=abc123
+
+  export CONTENTFUL_SPACE_ID=abc123
+</code></pre>
+</div>
+
+<p><strong>3. In Jekyll <em>config, prepend the variable names with ‘ENV</em>’</strong></p>
+
+<p><img src="/images/contentful/jekyll-env-vars.png" alt="" /></p>
+
+<p>The Space ID will look at  <code class="highlighter-rouge">ENV['CONTENTFUL_SPACE_ID']</code> and your Access Token on <code class="highlighter-rouge">ENV[‘CONTENTFUL_ACCESS_TOKEN']</code>.</p>
+
+<p>Run <code class="highlighter-rouge">bundle exec jekyll contentful</code> to make sure it works.</p>
+
+<p><strong>4. Add ENV vars in CircleCI through the UI</strong></p>
+
+<p>Go to Project settings &gt; Environment Variable and add your variables. CircleCI reads them during the Machine part of the build. Use the same variable name you used locally.</p>
+
+<p><img src="/images/contentful/env-vars-added.png" alt="" /></p>
+
+</section>
+
+</main>
+
+
+
+    <div id="overlay" class="js-overlay"></div>
+    <script src="/vendor/jquery-2.1.4.min.js"></script>
+    <script src="/vendor/slick.min.js"></script>
+    <script src="/vendor/prism.js"></script>
+    <script src="/js/scripts.js"></script>
+</body>
+</html>

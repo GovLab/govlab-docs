@@ -1,0 +1,184 @@
+@charset "UTF-8";
+.u-disabled {
+  opacity: .3;
+  pointer-events: none; }
+
+.u-material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: 'liga'; }
+
+.u-button {
+  padding: 15px 20px;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  border: 0;
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease; }
+  .u-button:hover {
+    color: white;
+    transition: all 0.3s ease; }
+
+.u-circle {
+  border-radius: 50%;
+  overflow: hidden; }
+
+.disabled {
+  pointer-events: none;
+  opacity: .4; }
+
+* {
+  box-sizing: border-box; }
+
+body {
+  margin: 0; }
+
+.main-wrapper {
+  padding-left: 320px; }
+
+.sidebar {
+  height: 100vh;
+  background-color: #02ac99;
+  width: 300px;
+  padding-top: 40px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  overflow-y: scroll; }
+
+.main-logo {
+  padding: 10px 20px 40px 20px;
+  margin: 0;
+  font-size: 1.43rem;
+  line-height: 1;
+  text-align: right;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: white; }
+  .main-logo > img {
+    max-width: 180px;
+    margin-left: 60px; }
+
+.long-text .page-title {
+  margin-top: 30px;
+  margin-bottom: 80px;
+  font-weight: 100;
+  font-size: 4rem;
+  text-transform: none;
+  color: #03dec6; }
+.long-text h1, .long-text h2, .long-text h3, .long-text h4, .long-text h5 {
+  position: relative;
+  padding-top: 20px; }
+  .long-text h1:after, .long-text h2:after, .long-text h3:after, .long-text h4:after, .long-text h5:after {
+    content: attr(data-number);
+    right: 100%;
+    bottom: 0;
+    padding: 0 30px 0 0;
+    font-weight: 600;
+    height: 100%;
+    text-align: right;
+    font-size: 1.4rem;
+    line-height: 1;
+    position: absolute;
+    color: rgba(0, 0, 0, 0.2); }
+.long-text h1 {
+  font-size: 2.4rem;
+  font-weight: 500;
+  margin-bottom: 0;
+  line-height: 1;
+  text-transform: uppercase; }
+.long-text h2 {
+  margin: 30px 0 0 0;
+  font-size: 2.4rem;
+  font-weight: 100;
+  line-height: 1; }
+.long-text h3 {
+  margin: 30px 0 0 0;
+  font-size: 1.7rem;
+  font-weight: 500;
+  line-height: 1; }
+.long-text h4 {
+  margin: 30px 0 0 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1; }
+.long-text h5 {
+  line-height: 1; }
+
+.sidebar-list {
+  width: 300px;
+  text-align: right;
+  border-top: 1px solid rgba(0, 0, 0, 0.1); }
+  .sidebar-list a,
+  .sidebar-list a:hover {
+    text-decoration: none;
+    font-weight: 600; }
+  .sidebar-list ul {
+    padding: 0;
+    margin: 0; }
+    .sidebar-list ul li {
+      margin: 0;
+      background-color: rgba(255, 255, 255, 0.025);
+      padding-left: 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+      .sidebar-list ul li a {
+        display: block;
+        padding: 10px 20px;
+        color: white;
+        position: relative; }
+      .sidebar-list ul li a:not(:only-child):before {
+        content: "+";
+        position: absolute;
+        left: 10px;
+        font-size: 1.5rem;
+        line-height: 1;
+        opacity: .4; }
+  .sidebar-list li li a {
+    padding-right: 35px; }
+  .sidebar-list li li li a {
+    padding-right: 50px; }
+  .sidebar-list .animate {
+    transition: all 0.8s; }
+  .sidebar-list li ul {
+    max-height: 0;
+    height: auto;
+    overflow: hidden; }
+  .sidebar-list .js-active > ul {
+    max-height: 10000px;
+    height: auto; }
+  .sidebar-list .js-active > a:not(:only-child):before {
+    content: "–"; }
+  .sidebar-list ul {
+    background-color: rgba(255, 255, 255, 0.025); }
+
+.sidebar-list {
+  background-color: #02ac99; }
+  .sidebar-list a:hover {
+    background-color: rgba(255, 255, 255, 0.3); }
+  .sidebar-list li ul {
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.4); }
+  .sidebar-list li li {
+    background-color: rgba(0, 0, 0, 0.1); }
+
+.tech-docs-page img {
+  max-width: 80%;
+  text-align: center; }

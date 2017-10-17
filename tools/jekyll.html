@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>Jekyll</title>
+
+    <link rel="stylesheet" href="/vendor/foundation.min.css">
+    <link rel="stylesheet" href="/vendor/styleguide-v2.css">
+    <link rel="stylesheet" href="/vendor/prism.css">
+    <link rel="stylesheet" href="/vendor/slick.css"/>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://use.typekit.net/mvc3cdb.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body class="">
+
+    
+<main role="main" class="main-wrapper"> <!-- main content starts here -->
+<aside class="sidebar">
+<h1 class="main-logo">
+  <img src="/images/govlab-logo-white.png" alt="">
+  Docs
+</h1>
+
+<section class="sidebar-list">
+<ul class="animate">
+
+  <li><a class="js-trigger" href="#introduction">Introduction</a>
+    
+      <ul class="animate">
+        
+          <li class="animate"><a class="js-trigger" href="#basic-tech-stack">Basic Tech Stack</a>
+          
+            <ul class="animate">
+              
+                <li class="animate"><a class="js-trigger" href="#jekyll">Jekyll</a>
+                
+                  <ul class="animate">
+                  
+                    <li class="animate"><a class="js-trigger" href="#layouts">Layouts</a>
+                  
+                    <li class="animate"><a class="js-trigger" href="#data">Data</a>
+                  
+                    <li class="animate"><a class="js-trigger" href="#posts">Posts</a>
+                  
+                  </ul>
+                
+              
+                <li class="animate"><a class="js-trigger" href="#gulp">Gulp</a>
+                
+              
+            </ul>
+          
+        
+          <li class="animate"><a class="js-trigger" href="#styleguide">Styleguide</a>
+          
+        
+          <li class="animate"><a class="js-trigger" href="#colors">Colors</a>
+          
+        
+      </ul>
+    
+
+  <li><a class="js-trigger" href="#team">Team</a>
+    
+      <ul class="animate">
+        
+          <li class="animate"><a class="js-trigger" href="#anna-bialas">Anna Bialas</a>
+          
+        
+          <li class="animate"><a class="js-trigger" href="#ena-bek">Ena Bek</a>
+          
+        
+          <li class="animate"><a class="js-trigger" href="#denny-tek">Denny Tek</a>
+          
+        
+          <li class="animate"><a class="js-trigger" href="#mark-adkins">Mark Adkins</a>
+          
+        
+          <li class="animate"><a class="js-trigger" href="#david-naffis">David Naffis</a>
+          
+        
+          <li class="animate"><a class="js-trigger" href="#chris-wong">Chris Wong</a>
+          
+        
+          <li class="animate"><a class="js-trigger" href="#claudio-mendonca">Claudio Mendonca</a>
+          
+        
+      </ul>
+    
+
+</ul>
+<!-- Projects menu -->
+<ul class="animate">
+  <li><a class="js-trigger" href="/#projects">Projects</a>
+      <ul class="animate">
+        
+        
+          <li class="animate"><a class="js-trigger" href="/projects/network-of-innovators.html">Network of Innovators</a>
+        
+        
+          <li class="animate"><a class="js-trigger" href="/projects/od500.html">OD500</a>
+        
+        
+          <li class="animate"><a class="js-trigger" href="/projects/open-data-impact-case-studies.html">Open Data Impact Case Studies</a>
+        
+        
+          <li class="animate"><a class="js-trigger" href="/projects/opening-governance.html">Opening Governance</a>
+        
+      </ul>
+  </ul>
+
+  <!-- Tools menu -->
+  <ul class="animate">
+    <li><a class="js-trigger" href="/#tools">Tools</a>
+        <ul class="animate">
+          
+          
+            <li class="animate"><a class="js-trigger" href="/tools/circle-ci.html">Circle CI</a>
+          
+          
+            <li class="animate"><a class="js-trigger" href="/tools/contentful.html">Contentful</a>
+          
+          
+            <li class="animate"><a class="js-trigger" href="/tools/jekyll.html">Jekyll</a>
+          
+        </ul>
+    </ul>
+
+</section>
+
+</aside>
+
+<section class="main-content long-text docs :.tech-docs-page">
+  <h1 class="page-title">Jekyll</h1>
+  <h4 id="suggested-changes-to-boilerplate">SUGGESTED CHANGES TO BOILERPLATE</h4>
+
+<p>Use two config files – one for jekyll development and one for gulp. The main issue is that deploying to GitHub pages requires the repo-name to be the subpath or none of your assets will be linked. the way Jekyll treats urls doesn’t match up to Gulp so we have to have different baseurls. This also makes it easier for staging and deployment.</p>
+
+<p><strong>In the html, use <code class="highlighter-rouge">relative_url</code>:</strong></p>
+
+<p><img src="/images/jekyll/relative_url.png" alt="" /></p>
+
+<p><strong>In <code class="highlighter-rouge">_config.yml</code>:</strong></p>
+
+<div class="language-yml highlighter-rouge"><pre class="highlight"><code><span class="s">baseurl</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/repo-name"</span> <span class="c1"># the subpath of your site, e.g. /blog</span>
+<span class="s">url</span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://govlab.github.io"</span> <span class="c1"># the base hostname &amp; protocol for your site, e.g. http://example.com</span>
+
+</code></pre>
+</div>
+
+<p>The url and baseurl will be changed for production. When using <code class="highlighter-rouge">relative_url</code>, Jekyll will append each path with the baseurl. When you <code class="highlighter-rouge">be jekyll serve</code>, your links will have the baseurl and <code class="highlighter-rouge">gulp</code> won’t.</p>
+
+<p><strong>In <code class="highlighter-rouge">_config_dev.yml</code>:</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>baseurl: "" 
+url: "" 
+</code></pre>
+</div>
+
+<p>To serve using <code class="highlighter-rouge">_config_dev.yml</code>, you would use:</p>
+
+<p><code class="highlighter-rouge">bundle exec jekyll build --incremental --config _config.yml,_config_dev.yml</code></p>
+
+<p>So in the gulpfile, you would use <code class="highlighter-rouge">_config_dev.yml</code> for the default gulp task so we can take advantage of live reloading. When we deploy, we have a <code class="highlighter-rouge">build:prod</code> task to build using <code class="highlighter-rouge">_config.yml</code>.</p>
+
+<p><strong>In the gulpfile:</strong></p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code>
+<span class="kd">var</span> <span class="nx">gulp</span>            <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gulp'</span><span class="p">),</span>
+    <span class="nx">shell</span>           <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gulp-shell'</span><span class="p">),</span>
+    <span class="nx">ghPages</span>         <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gulp-gh-pages'</span><span class="p">),</span>
+    <span class="nx">imagemin</span>        <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gulp-imagemin'</span><span class="p">),</span>
+    <span class="nx">browserSync</span>     <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'browser-sync'</span><span class="p">),</span>
+    <span class="nx">cp</span>              <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'child_process'</span><span class="p">),</span>
+    <span class="nx">runSequence</span>     <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'run-sequence'</span><span class="p">).</span><span class="nx">use</span><span class="p">(</span><span class="nx">gulp</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">messages</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">jekyllBuild</span><span class="p">:</span> <span class="s1">'building...'</span>
+<span class="p">};</span>
+
+<span class="c1">// Browser Sync</span>
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'browserSync'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">browserSync</span><span class="p">({</span>
+    <span class="na">server</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">baseDir</span><span class="p">:</span> <span class="s1">'_site'</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'image'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">'source/images/**/*'</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">imagemin</span><span class="p">())</span>
+    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">'_site/images'</span><span class="p">));</span>
+<span class="p">});</span>
+
+
+<span class="c1">// Deploy Tasks</span>
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'build:prod'</span><span class="p">,</span> <span class="nx">shell</span><span class="p">.</span><span class="nx">task</span><span class="p">([</span><span class="s1">'bundle exec jekyll build'</span><span class="p">]));</span>
+
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'push-gh-master'</span><span class="p">,</span> <span class="nx">shell</span><span class="p">.</span><span class="nx">task</span><span class="p">([</span><span class="s1">'git push origin master'</span><span class="p">]));</span>
+
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'push-gh-pages'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">'_site/**/*'</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">ghPages</span><span class="p">({</span> <span class="na">force</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}));</span>
+<span class="p">});</span>
+
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'deploy'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">runSequence</span><span class="p">(</span>
+    <span class="s1">'build:prod'</span><span class="p">,</span>
+    <span class="s1">'image'</span><span class="p">,</span>
+    <span class="s1">'push-gh-master'</span><span class="p">,</span>
+    <span class="s1">'push-gh-pages'</span><span class="p">,</span>
+    <span class="nx">callback</span>
+  <span class="p">);</span>
+<span class="p">});</span>
+
+<span class="c1">// Dev tasks</span>
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'jekyll'</span><span class="p">,</span> <span class="nx">shell</span><span class="p">.</span><span class="nx">task</span><span class="p">([</span><span class="s1">'bundle exec jekyll build --incremental --config _config.yml,_config_dev.yml'</span><span class="p">]));</span>
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'jekyll-force'</span><span class="p">,</span> <span class="nx">shell</span><span class="p">.</span><span class="nx">task</span><span class="p">([</span><span class="s1">'bundle exec jekyll build --config _config.yml,_config_dev.yml'</span><span class="p">]));</span>
+
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'jekyll-rebuild'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'jekyll'</span><span class="p">],</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">browserSync</span><span class="p">.</span><span class="nx">reload</span><span class="p">();</span>
+<span class="p">});</span>
+
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'sync'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">browserSync</span><span class="p">.</span><span class="nx">reload</span><span class="p">();</span>
+<span class="p">});</span>
+
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'jekyll-rebuild-force'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'jekyll-force'</span><span class="p">],</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">browserSync</span><span class="p">.</span><span class="nx">reload</span><span class="p">();</span>
+<span class="p">});</span>
+
+
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'watch'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">gulp</span><span class="p">.</span><span class="nx">watch</span><span class="p">(</span><span class="s1">'source/**/*.*'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'jekyll-rebuild'</span><span class="p">]);</span>
+  <span class="nx">gulp</span><span class="p">.</span><span class="nx">watch</span><span class="p">(</span><span class="s1">'source/_data/*.*'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'jekyll-rebuild-force'</span><span class="p">]);</span>
+<span class="p">});</span>
+
+  <span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'default'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">runSequence</span><span class="p">(</span>
+    <span class="p">[</span><span class="s1">'jekyll-rebuild-force'</span><span class="p">,</span> <span class="s1">'watch'</span><span class="p">,</span> <span class="s1">'browserSync'</span><span class="p">],</span>
+    <span class="nx">callback</span>
+  <span class="p">);</span>
+<span class="p">});</span>
+
+
+</code></pre>
+</div>
+
+</section>
+
+</main>
+
+
+
+    <div id="overlay" class="js-overlay"></div>
+    <script src="/vendor/jquery-2.1.4.min.js"></script>
+    <script src="/vendor/slick.min.js"></script>
+    <script src="/vendor/prism.js"></script>
+    <script src="/js/scripts.js"></script>
+</body>
+</html>
