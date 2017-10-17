@@ -7,11 +7,11 @@
 
     <title>Circle CI</title>
 
-    <link rel="stylesheet" href="/vendor/foundation.min.css">
-    <link rel="stylesheet" href="/vendor/styleguide-v2.css">
-    <link rel="stylesheet" href="/vendor/prism.css">
-    <link rel="stylesheet" href="/vendor/slick.css"/>
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://govlab.github.io/govlab-docs/vendor/foundation.min.css">
+    <link rel="stylesheet" href="https://govlab.github.io/govlab-docs/vendor/styleguide-v2.css">
+    <link rel="stylesheet" href="https://govlab.github.io/govlab-docs/vendor/prism.css">
+    <link rel="stylesheet" href="https://govlab.github.io/govlab-docs/vendor/slick.css"/>
+    <link rel="stylesheet" href="https://govlab.github.io/govlab-docs/css/styles.css">
     <script src="https://use.typekit.net/mvc3cdb.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -23,7 +23,7 @@
 <main role="main" class="main-wrapper"> <!-- main content starts here -->
 <aside class="sidebar">
 <h1 class="main-logo">
-  <img src="/images/govlab-logo-white.png" alt="">
+  <img src="https://govlab.github.io/govlab-docs/images/govlab-logo-white.png" alt="">
   Docs
 </h1>
 
@@ -151,56 +151,56 @@
 <p><strong>2. Add your project to <a href="https://circleci.com/">CircleCI</a>:</strong>
 When you log in with your GitHub account, your organizations and their projects will be listed in CircleCI. Select your organization, and click on Add Project.</p>
 
-<p><img src="/images/circleci/0a-circleci-add-project.png" alt="" /></p>
+<p><img src="/govlab-docs/images/circleci/0a-circleci-add-project.png" alt="" /></p>
 
 <p><strong>3. Setup Project</strong></p>
 
 <p>Select the project you want to start building and click on Setup Project.</p>
 
-<p><img src="/images/circleci/0b-circle-ci-setup-project.png" alt="" /></p>
+<p><img src="/govlab-docs/images/circleci/0b-circle-ci-setup-project.png" alt="" /></p>
 
 <p>This will take you to the setup page. Select Linux as the operating system and Ruby as the language.</p>
 
-<p><img src="/images/circleci/0c-circleci-setup-page.png" alt="" /></p>
+<p><img src="/govlab-docs/images/circleci/0c-circleci-setup-page.png" alt="" /></p>
 
 <p>You can ignore Next Steps because we will provide a custom circle.yml file. Click on Start Building.</p>
 
-<p><img src="/images/circleci/0d-circleci-startbuilding.png" alt="" /></p>
+<p><img src="/govlab-docs/images/circleci/0d-circleci-startbuilding.png" alt="" /></p>
 
 <p>Cancel the build on the next page.</p>
 
-<p><img src="/images/circleci/0e-circleci-build-page.png" alt="" /></p>
+<p><img src="/govlab-docs/images/circleci/0e-circleci-build-page.png" alt="" /></p>
 
 <p>A CircleCI deploy key added to your GitHub project in <strong>Settings –&gt; Deploy Keys</strong></p>
 
 <p><strong>4. Generate your CircleCI API Token in Accounts/Personal API token.</strong>
 You can find the token in User Settings/Personal API Tokens.</p>
 
-<p><img src="/images/circleci/1-circle-ci-personal-api-token.png" alt="" /></p>
+<p><img src="/govlab-docs/images/circleci/1-circle-ci-personal-api-token.png" alt="" /></p>
 
 <p><strong>5. Log into Contentful and create your webhook in your project space.</strong></p>
 
-<p><img src="/images/circleci/2-contentful-setting-webhooks.png" alt="" /></p>
+<p><img src="/govlab-docs/images/circleci/2-contentful-setting-webhooks.png" alt="" /></p>
 
 <p>Add the following URL to the web hook settings page</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>https://circleci.com/api/v1/project/YOUR_COMPANY/YOUR_PROJECT/tree/master?circle-token=YOUR_CIRCLECI_TOKEN
 </code></pre>
 </div>
-<p><img src="/images/circleci/4-contentful-webhook-url.png" alt="" /></p>
+<p><img src="/govlab-docs/images/circleci/4-contentful-webhook-url.png" alt="" /></p>
 
-<!-- ![](/images/circleci/3-contentful-webhook-list.png) -->
+<!-- ![](/govlab-docs/images/circleci/3-contentful-webhook-list.png) -->
 
 <p>Trigger webhooks for ‘Only selected events’ and on Publish/Unpublish.</p>
 
-<p><img src="/images/circleci/5-contentful-webhook-settings.png" alt="" />
-<!-- ![](/images/circleci/6-circle-ci-project-settings.png) --></p>
+<p><img src="/govlab-docs/images/circleci/5-contentful-webhook-settings.png" alt="" />
+<!-- ![](/govlab-docs/images/circleci/6-circle-ci-project-settings.png) --></p>
 
 <p><strong>6. Add your deploy key and user key</strong></p>
 
 <p>Builds —&gt; Project Settings &gt; Permissions &gt; Checkout SSH Keys.</p>
 
-<p><img src="/images/circleci/8-circleci-user-keys.png" alt="" /></p>
+<p><img src="/govlab-docs/images/circleci/8-circleci-user-keys.png" alt="" /></p>
 
 <p><strong>7. Add automated_build.sh</strong></p>
 
@@ -239,11 +239,11 @@ git commit -m <span class="s2">"Automated Rebuild"</span>
   <li>
     <p>Replace repo here</p>
 
-    <p><img src="/images/circleci/9-replace-repo-url.png" alt="" /></p>
+    <p><img src="/govlab-docs/images/circleci/9-replace-repo-url.png" alt="" /></p>
   </li>
   <li>
     <p>Replace git config here
-<img src="/images/circleci/10-replace-git-config.png" alt="" /></p>
+<img src="/govlab-docs/images/circleci/10-replace-git-config.png" alt="" /></p>
   </li>
 </ul>
 
@@ -302,9 +302,9 @@ git commit -m <span class="s2">"Automated Rebuild"</span>
 
 
     <div id="overlay" class="js-overlay"></div>
-    <script src="/vendor/jquery-2.1.4.min.js"></script>
-    <script src="/vendor/slick.min.js"></script>
-    <script src="/vendor/prism.js"></script>
-    <script src="/js/scripts.js"></script>
+    <script src="https://govlab.github.io/govlab-docs/vendor/jquery-2.1.4.min.js"></script>
+    <script src="https://govlab.github.io/govlab-docs/vendor/slick.min.js"></script>
+    <script src="https://govlab.github.io/govlab-docs/vendor/prism.js"></script>
+    <script src="https://govlab.github.io/govlab-docs/js/scripts.js"></script>
 </body>
 </html>
