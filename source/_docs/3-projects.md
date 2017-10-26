@@ -3,4 +3,6 @@ layout: docs
 title: Projects
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur ex dicta animi, quibusdam ad necessitatibus obcaecati esse reiciendis consequatur, porro perferendis neque. Inventore aliquam facilis, debitis enim, laudantium earum itaque! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, iste nihil debitis consequuntur expedita soluta delectus numquam ipsam est fugit, dignissimos similique? Totam voluptate voluptas earum consequatur officiis veritatis quia!
+A listing of our documented projects can be found under Projects.  These include projects with unique features or requiring special documentation.  In many cases if a project is not listed here it will either be a clone of one of these projects and/or have a readme.md file in the repository with additional info.
+
+A full listing of our projects can be found on [github](https://github.com/GovLab)

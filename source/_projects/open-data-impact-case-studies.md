@@ -10,7 +10,7 @@ github: https://github.com/GovLab/odimpact-2
 - [jekyll](https://jekyllrb.com/)
 
 ### Getting Started
-- Clone the repo: [opening-governance](https://github.com/GovLab/odimpact-2.git)
+- Clone the repo: [odimpact-2](https://github.com/GovLab/odimpact-2.git)
 
 ### Installing
 - Fetch and update bundled gems by running `bundle install`

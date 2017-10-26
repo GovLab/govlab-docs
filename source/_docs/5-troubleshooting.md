@@ -1,3 +1,8 @@
+# Common Issues and Solutions
+
+## Issue
+When deploying receive an error similar to this:
+
 ```
 [13:50:59] Error in plugin 'gulp-gh-pages'
 Message:
@@ -9,4 +14,5 @@ Details:
     path: .publish/.git/HEAD
 ```
 
+## Solution
 run `rm -rf .publish` and try to deploy again

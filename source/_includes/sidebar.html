@@ -2,19 +2,19 @@
 <section class="sidebar-list">
 <ul class="animate">
 {% for i in site.data.titles %}
-  <li><a class="js-trigger" href="#{{i.title | slugify}}">{{i.title}}</a>
+  <li><a class="js-trigger" href="{{ site.url }}{{ site.baseurl }}/#{{ i.title | slugify }}">{{i.title}}</a>
     {% if i.subtitles %}
       <ul class="animate">
         {% for j in i.subtitles %}
-          <li class="animate"><a class="js-trigger" href="#{{j.title | slugify}}">{{j.title}}</a>
+          <li class="animate"><a class="js-trigger" href="{{ site.url }}{{ site.baseurl }}/#{{j.title | slugify}}">{{j.title}}</a>
           {% if j.subtitles %}
             <ul class="animate">
               {% for k in j.subtitles %}
-                <li class="animate"><a class="js-trigger" href="#{{k.title | slugify}}">{{k.title}}</a>
+                <li class="animate"><a class="js-trigger" href="{{ site.url }}{{ site.baseurl }}/#{{k.title | slugify}}">{{k.title}}</a>
                 {% if k.subtitles %}
                   <ul class="animate">
                   {% for m in k.subtitles %}
-                    <li class="animate"><a class="js-trigger" href="#{{m.title | slugify}}">{{m.title}}</a>
+                    <li class="animate"><a class="js-trigger" href="{{ site.url }}{{ site.baseurl }}/#{{m.title | slugify}}">{{m.title}}</a>
                   {% endfor %}
                   </ul>
                 {% endif %}
